@@ -1,0 +1,80 @@
+# Dependências
+node_modules/
+vendor/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Builds, cache e temporários
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+.next/
+out/
+coverage/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Banco de dados local e dumps
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.dump
+*.bak
+*.backup
+*.sql
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs e editores
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Arquivos locais de trabalho e mídia duplicada fora da estrutura frontend/assets
+/ATLAS-FOTOGRAFICO-DE-NEUROANATOMIA-HUMANA.pdf
+/hospital-frontend-arch.skill.zip
+/ChatGPT Image*.png
+/WhatsApp Image*.jpeg
+/WhatsApp Image*.jpg
+/Congresso_Unifal_*.jpg
+/partner-*.png
+/pich*.jpeg
+/SisApec_Vídeo OK_final.mp4
+/foto isabelle.jpeg
+/frente universidade.jpeg
+/hypergator video.mp4
+/hypergator.jpeg
+/sisapecwork.jpeg
+/usando sistema*.jpeg
+/UF health.jpeg
+/_contact-sheet.jpg
