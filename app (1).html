@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlética Sem Dor · Sistema Clínico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ============================================================
+         TOPBAR
+         ============================================================ -->
+    <header class="topbar">
+      <div style="display:flex; align-items:center;">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <div class="topbar-brand">
+          <div class="mark">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 3.2 4.8 8.8v7.04c0 7.04 4.8 12.48 11.2 13.76 6.4-1.28 11.2-6.72 11.2-13.76V8.8L16 3.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M16 12v8M12 16h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="text">
+            <span class="title">Atlética Sem Dor</span>
+            <span class="sub">UNIFAL-MG · Fisioterapia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <div class="search-bar">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m14 14 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input id="globalSearch" type="search" placeholder="Buscar paciente, atendimento ou evento…" />
+          <kbd>⌘K</kbd>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" title="Novo atendimento" data-action="open-appointment-modal">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" title="Notificações">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 9a6 6 0 1 1 12 0v4l1.5 3h-15L6 13V9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 19a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="notif-dot"></span>
+        </button>
+        <div class="user-chip">
+          <div class="avatar">GS</div>
+          <div class="user-info">
+            <span class="user-name">Guilherme Silva</span>
+            <span class="user-role">Fisioterapeuta · Liga</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         SIDEBAR
+         ============================================================ -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <div class="nav-section">
+          <span class="nav-label">Principal</span>
+          <a class="nav-item active" data-page="dashboard">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M3 10 10 3l7 7v7a1 1 0 0 1-1 1h-4v-5H8v5H4a1 1 0 0 1-1-1v-7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Dashboard
+          </a>
+          <a class="nav-item" data-page="patients">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 17c.8-3 3.5-5 6.5-5s5.7 2 6.5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Pacientes
+            <span class="nav-count" id="navCountPatients">0</span>
+          </a>
+          <a class="nav-item" data-page="appointments">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4.5" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14M7 3v3M13 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Atendimentos
+            <span class="nav-count" id="navCountAppointments">0</span>
+          </a>
+          <a class="nav-item" data-page="history">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l2.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Histórico
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">Clínico</span>
+          <a class="nav-item" data-page="specialties">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M6 3v5a4 4 0 0 0 8 0V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 12v2a3 3 0 1 0 6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="16" r="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+            Especialidades
+          </a>
+          <a class="nav-item" data-page="observations">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 4h12v12l-3-3H4V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 8h6M7 11h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Observações
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">Atlética</span>
+          <a class="nav-item" data-page="events">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M7 4h6v3a3 3 0 1 1-6 0V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13 5h3v2a2 2 0 0 1-2 2M7 5H4v2a2 2 0 0 0 2 2M8 13h4l-.5 3h-3L8 13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Eventos esportivos
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-bulletin">
+        <div class="t">Jogos Universitários</div>
+        <div class="d">Próxima rodada em 3 dias. 6 atletas em reavaliação.</div>
+        <a href="#" data-page="events">Ver agenda →</a>
+      </div>
+
+      <div class="sidebar-footer">
+        <a class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M16.2 10a6.2 6.2 0 0 0-.15-1.35l1.6-1.25-1.5-2.6-1.95.7a6.2 6.2 0 0 0-2.35-1.35L11.5 2h-3l-.35 2.15a6.2 6.2 0 0 0-2.35 1.35l-1.95-.7-1.5 2.6 1.6 1.25A6.2 6.2 0 0 0 3.8 10c0 .46.05.91.15 1.35l-1.6 1.25 1.5 2.6 1.95-.7a6.2 6.2 0 0 0 2.35 1.35L8.5 18h3l.35-2.15a6.2 6.2 0 0 0 2.35-1.35l1.95.7 1.5-2.6-1.6-1.25c.1-.44.15-.89.15-1.35Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          Configurações
+        </a>
+        <a class="nav-item" href="index.html">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M12 4h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3M10 14l4-4-4-4M14 10H4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sair
+        </a>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         MAIN
+         ============================================================ -->
+    <main class="main">
+
+      <!-- ================= DASHBOARD ================= -->
+      <section class="page active" id="page-dashboard">
+        <header class="page-header">
+          <div>
+            <h1>Dashboard clínico</h1>
+            <p class="page-subtitle" id="todayLabel">Visão geral do dia</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary" id="exportBtn">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 12v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Exportar relatório
+            </button>
+            <button class="btn btn-primary" data-action="open-appointment-modal">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Novo atendimento
+            </button>
+          </div>
+        </header>
+
+        <div class="stats-grid" id="statsGrid"><!-- preenchido via JS --></div>
+
+        <div class="grid-2-1">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Atendimentos de hoje</h2>
+                <div class="subtitle">Triagem e evolução em andamento</div>
+              </div>
+              <a class="link" data-page="appointments">Ver todos →</a>
+            </div>
+            <div class="table-scroll">
+              <table class="data-table" id="todayAppointmentsTable">
+                <thead>
+                  <tr>
+                    <th>Horário</th>
+                    <th>Atleta</th>
+                    <th>Especialidade</th>
+                    <th>Profissional</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody><!-- JS --></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Próximos eventos</h2>
+                <div class="subtitle">Cobertura da liga</div>
+              </div>
+            </div>
+            <ul class="event-list" id="upcomingEventsList"><!-- JS --></ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:20px;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Observações clínicas recentes</h2>
+                <div class="subtitle">Registros da equipe nas últimas 48h</div>
+              </div>
+              <a class="link" data-page="observations">Abrir caderno →</a>
+            </div>
+            <div class="card-body" id="recentNotes"><!-- JS --></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Distribuição por especialidade</h2>
+                <div class="subtitle">Atendimentos no mês</div>
+              </div>
+            </div>
+            <div class="card-body" id="specialtyDistribution"><!-- JS --></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PACIENTES ================= -->
+      <section class="page" id="page-patients">
+        <header class="page-header">
+          <div>
+            <h1>Pacientes</h1>
+            <p class="page-subtitle">Atletas e pacientes cadastrados na liga</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary" id="importPatientsBtn">Importar CSV</button>
+            <button class="btn btn-primary" data-action="open-patient-modal">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Novo paciente
+            </button>
+          </div>
+        </header>
+
+        <div class="card">
+          <div class="toolbar">
+            <div class="search-inline">
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m14 14 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="search" id="patientSearch" placeholder="Buscar por nome, matrícula ou modalidade…" />
+            </div>
+            <select id="patientSpecialtyFilter" class="pill-select">
+              <option value="">Todas especialidades</option>
+              <option value="Ortopedia">Ortopedia</option>
+              <option value="Esportiva">Esportiva</option>
+              <option value="Neurofuncional">Neurofuncional</option>
+              <option value="Respiratória">Respiratória</option>
+            </select>
+            <select id="patientStatusFilter" class="pill-select">
+              <option value="">Todos status</option>
+              <option value="Ativo">Ativo</option>
+              <option value="Em tratamento">Em tratamento</option>
+              <option value="Alta">Alta</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+            <span class="spacer"></span>
+            <span class="text-subtle" id="patientCount"></span>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="patientsTable">
+              <thead>
+                <tr>
+                  <th>Atleta</th>
+                  <th>Idade</th>
+                  <th>Modalidade</th>
+                  <th>Especialidade</th>
+                  <th>Último atendimento</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ATENDIMENTOS ================= -->
+      <section class="page" id="page-appointments">
+        <header class="page-header">
+          <div>
+            <h1>Atendimentos</h1>
+            <p class="page-subtitle">Registro de sessões fisioterapêuticas</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" data-action="open-appointment-modal">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Registrar atendimento
+            </button>
+          </div>
+        </header>
+
+        <div class="card">
+          <div class="toolbar">
+            <div class="tabs" id="appointmentTabs">
+              <span class="tab active" data-filter="all">Todos</span>
+              <span class="tab" data-filter="today">Hoje</span>
+              <span class="tab" data-filter="pending">Pendentes</span>
+              <span class="tab" data-filter="finished">Finalizados</span>
+            </div>
+            <div class="search-inline">
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m14 14 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="search" id="appointmentSearch" placeholder="Buscar atendimento…" />
+            </div>
+            <span class="spacer"></span>
+            <span class="text-subtle" id="appointmentCount"></span>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="appointmentsTable">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Atleta</th>
+                  <th>Especialidade</th>
+                  <th>Evento</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HISTÓRICO ================= -->
+      <section class="page" id="page-history">
+        <header class="page-header">
+          <div>
+            <h1>Histórico de atendimentos</h1>
+            <p class="page-subtitle">Linha do tempo de evolução clínica por atleta</p>
+          </div>
+        </header>
+
+        <div class="grid-2-1">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Linha do tempo</h2>
+                <div class="subtitle" id="historyPatientName">Selecione um atleta</div>
+              </div>
+            </div>
+            <div class="card-body" id="historyTimeline">
+              <div class="empty-state">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <h3>Selecione um atleta</h3>
+                <p>Escolha um paciente ao lado para ver o histórico clínico completo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Atletas acompanhados</h2>
+              </div>
+            </div>
+            <div class="card-body" style="padding:8px;">
+              <div class="search-inline" style="margin:8px;">
+                <svg viewBox="0 0 20 20" fill="none" style="position:absolute; left:18px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--color-text-subtle);"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="m14 14 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <input type="search" id="historyPatientSearch" placeholder="Buscar atleta…" style="padding-left:32px;" />
+              </div>
+              <ul id="historyPatientList" style="max-height:420px; overflow-y:auto;"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ESPECIALIDADES ================= -->
+      <section class="page" id="page-specialties">
+        <header class="page-header">
+          <div>
+            <h1>Especialidades</h1>
+            <p class="page-subtitle">Áreas de atuação da liga acadêmica</p>
+          </div>
+        </header>
+        <div class="specialty-grid" id="specialtyGrid"></div>
+      </section>
+
+      <!-- ================= EVENTOS ================= -->
+      <section class="page" id="page-events">
+        <header class="page-header">
+          <div>
+            <h1>Eventos esportivos</h1>
+            <p class="page-subtitle">Cobertura de jogos, treinos e competições</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" data-action="open-event-modal">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Novo evento
+            </button>
+          </div>
+        </header>
+        <div class="events-grid" id="eventsGrid"></div>
+      </section>
+
+      <!-- ================= OBSERVAÇÕES ================= -->
+      <section class="page" id="page-observations">
+        <header class="page-header">
+          <div>
+            <h1>Observações clínicas</h1>
+            <p class="page-subtitle">Notas rápidas, alertas e registros da equipe</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary" data-action="open-note-modal">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Nova observação
+            </button>
+          </div>
+        </header>
+
+        <div class="grid-2-1">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2>Registros recentes</h2>
+                <div class="subtitle">Ordenados por data</div>
+              </div>
+              <div class="tabs" id="notePriorityTabs">
+                <span class="tab active" data-filter="all">Todas</span>
+                <span class="tab" data-filter="priority">Prioritárias</span>
+              </div>
+            </div>
+            <div class="card-body" id="notesList"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2>Como registrar uma boa nota</h2>
+            </div>
+            <div class="card-body">
+              <ul style="display:flex; flex-direction:column; gap:10px; font-size:13px; color:var(--color-text-muted); line-height:1.55;">
+                <li>• Descreva o mecanismo de lesão e a queixa principal.</li>
+                <li>• Registre escala de dor (EVA 0–10) e limitação funcional.</li>
+                <li>• Aponte condutas aplicadas e plano para a próxima sessão.</li>
+                <li>• Use <strong>Prioritária</strong> quando houver necessidade de acompanhamento imediato.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ============================================================
+       MODAL: NOVO PACIENTE
+       ============================================================ -->
+  <div class="modal-backdrop" id="patientModal">
+    <div class="modal lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="patientModalTitle">Cadastrar paciente</h3>
+          <div class="sub">Preencha os dados clínicos do atleta</div>
+        </div>
+        <button class="modal-close" data-close-modal>
+          <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="m6 6 8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form id="patientForm">
+        <div class="modal-body">
+          <div class="form-grid cols-2">
+            <div class="form-field">
+              <label for="pName">Nome completo</label>
+              <input id="pName" name="name" type="text" required placeholder="Ex.: Bruno Camargo" />
+            </div>
+            <div class="form-field">
+              <label for="pBirth">Data de nascimento</label>
+              <input id="pBirth" name="birth" type="date" required />
+            </div>
+            <div class="form-field">
+              <label for="pDoc">CPF / Matrícula</label>
+              <input id="pDoc" name="doc" type="text" placeholder="000.000.000-00" />
+            </div>
+            <div class="form-field">
+              <label for="pPhone">Telefone</label>
+              <input id="pPhone" name="phone" type="tel" placeholder="(35) 99999-0000" />
+            </div>
+            <div class="form-field">
+              <label for="pModality">Modalidade</label>
+              <select id="pModality" name="modality">
+                <option>Futebol</option>
+                <option>Vôlei</option>
+                <option>Basquete</option>
+                <option>Handebol</option>
+                <option>Atletismo</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="pSpecialty">Especialidade principal</label>
+              <select id="pSpecialty" name="specialty">
+                <option>Ortopedia</option>
+                <option>Esportiva</option>
+                <option>Neurofuncional</option>
+                <option>Respiratória</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="form-grid cols-2">
+            <div class="form-field">
+              <label for="pStatus">Status clínico</label>
+              <select id="pStatus" name="status">
+                <option>Ativo</option>
+                <option>Em tratamento</option>
+                <option>Alta</option>
+                <option>Inativo</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="pPain">Escala de dor (EVA 0–10)</label>
+              <input id="pPain" name="pain" type="number" min="0" max="10" step="1" placeholder="0" />
+            </div>
+            <div class="form-field" style="grid-column: 1 / -1;">
+              <label for="pHistory">Histórico clínico relevante</label>
+              <textarea id="pHistory" name="history" placeholder="Cirurgias prévias, lesões recorrentes, observações de triagem…"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar paciente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: NOVO ATENDIMENTO
+       ============================================================ -->
+  <div class="modal-backdrop" id="appointmentModal">
+    <div class="modal lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="appointmentModalTitle">Registrar atendimento</h3>
+          <div class="sub">Registre sessão fisioterapêutica, triagem ou reavaliação</div>
+        </div>
+        <button class="modal-close" data-close-modal>
+          <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="m6 6 8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form id="appointmentForm">
+        <div class="modal-body">
+          <div class="form-grid cols-2">
+            <div class="form-field">
+              <label for="aPatient">Paciente</label>
+              <select id="aPatient" name="patientId" required></select>
+            </div>
+            <div class="form-field">
+              <label for="aSpecialty">Especialidade</label>
+              <select id="aSpecialty" name="specialty">
+                <option>Ortopedia</option>
+                <option>Esportiva</option>
+                <option>Neurofuncional</option>
+                <option>Respiratória</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="aDate">Data</label>
+              <input id="aDate" name="date" type="date" required />
+            </div>
+            <div class="form-field">
+              <label for="aTime">Horário</label>
+              <input id="aTime" name="time" type="time" required />
+            </div>
+            <div class="form-field">
+              <label for="aEvent">Evento vinculado (opcional)</label>
+              <select id="aEvent" name="eventId">
+                <option value="">Atendimento regular</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="aProfessional">Profissional responsável</label>
+              <input id="aProfessional" name="professional" type="text" value="Guilherme Silva" />
+            </div>
+            <div class="form-field">
+              <label for="aType">Tipo</label>
+              <select id="aType" name="type">
+                <option>Triagem</option>
+                <option>Sessão</option>
+                <option>Reavaliação</option>
+                <option>Alta</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="aStatus">Status</label>
+              <select id="aStatus" name="status">
+                <option>Agendado</option>
+                <option>Em andamento</option>
+                <option>Finalizado</option>
+                <option>Faltou</option>
+              </select>
+            </div>
+            <div class="form-field" style="grid-column: 1 / -1;">
+              <label for="aNotes">Conduta / evolução</label>
+              <textarea id="aNotes" name="notes" placeholder="Queixa, escala de dor, condutas aplicadas, plano para próxima sessão…"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar atendimento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: NOVO EVENTO
+       ============================================================ -->
+  <div class="modal-backdrop" id="eventModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h3>Cadastrar evento esportivo</h3>
+          <div class="sub">Jogos, treinos ou competições cobertas pela liga</div>
+        </div>
+        <button class="modal-close" data-close-modal>
+          <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="m6 6 8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form id="eventForm">
+        <div class="modal-body">
+          <div class="form-grid cols-2">
+            <div class="form-field" style="grid-column: 1 / -1;">
+              <label for="eName">Nome do evento</label>
+              <input id="eName" name="name" type="text" required placeholder="Ex.: Jogos Universitários 2025" />
+            </div>
+            <div class="form-field">
+              <label for="eDate">Data</label>
+              <input id="eDate" name="date" type="date" required />
+            </div>
+            <div class="form-field">
+              <label for="eLocation">Local</label>
+              <input id="eLocation" name="location" type="text" placeholder="Ex.: Ginásio UNIFAL" />
+            </div>
+            <div class="form-field">
+              <label for="eModality">Modalidade</label>
+              <select id="eModality" name="modality">
+                <option>Futebol</option>
+                <option>Vôlei</option>
+                <option>Basquete</option>
+                <option>Handebol</option>
+                <option>Atletismo</option>
+                <option>Multi-esportivo</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="eStatus">Status</label>
+              <select id="eStatus" name="status">
+                <option>Agendado</option>
+                <option>Em andamento</option>
+                <option>Concluído</option>
+              </select>
+            </div>
+            <div class="form-field" style="grid-column: 1 / -1;">
+              <label for="eDesc">Descrição</label>
+              <textarea id="eDesc" name="description" placeholder="Escopo da cobertura, escala da equipe, observações logísticas…"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar evento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: NOVA OBSERVAÇÃO
+       ============================================================ -->
+  <div class="modal-backdrop" id="noteModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h3>Registrar observação clínica</h3>
+          <div class="sub">Notas rápidas da equipe fisioterapêutica</div>
+        </div>
+        <button class="modal-close" data-close-modal>
+          <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="m6 6 8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form id="noteForm">
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="nPatient">Paciente (opcional)</label>
+              <select id="nPatient" name="patientId">
+                <option value="">Observação geral</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="nContent">Observação</label>
+              <textarea id="nContent" name="content" required placeholder="Descreva a observação, conduta sugerida ou alerta clínico…"></textarea>
+            </div>
+            <label class="checkbox">
+              <input type="checkbox" id="nPriority" />
+              <span>Marcar como prioritária (alerta da equipe)</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar observação</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast stack -->
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
