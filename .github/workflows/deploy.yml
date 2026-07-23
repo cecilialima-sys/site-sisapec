@@ -27,3 +27,8 @@ jobs:
             -e "ssh -p 12589 -i ~/.ssh/id_rsa" \
             ./frontend/ \
             sisapec-prod@23.158.233.110:/home/sisapec-prod/site/
+
+      - name: Publish to nginx root
+        run: |
+          ssh -p 12589 -i ~/.ssh/id_rsa sisapec-prod@23.158.233.110 \
+            "/home/sisapec-prod/deploy_site.sh"
