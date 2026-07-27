@@ -50,6 +50,27 @@
   text-align: left;
 }
 
+.pet-hero-copy .page-back-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 14px;
+  border: 1px solid rgba(47, 151, 216, 0.26);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  background: rgba(255, 255, 255, 0.84);
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.pet-hero-copy .page-back-link:hover,
+.pet-hero-copy .page-back-link:focus-visible {
+  color: var(--color-primary);
+  box-shadow: var(--shadow-card);
+}
+
 .pet-hero h1 {
   color: var(--color-primary);
   font-size: clamp(38px, 5vw, 66px);
