@@ -12,8 +12,14 @@
   .info-grid,
   .developer-grid,
   .support-metrics,
-  .funding-logos {
+  .funding-logos,
+  .pet-techsus-content-grid,
+  .pet-techsus-flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pet-techsus-hero-grid {
+    grid-template-columns: 1fr;
   }
 
   .info-card {
@@ -82,8 +88,33 @@
   .info-grid,
   .developer-grid,
   .support-metrics,
-  .funding-logos {
+  .funding-logos,
+  .pet-techsus-content-grid,
+  .pet-techsus-flow {
     grid-template-columns: 1fr;
+  }
+
+  .project-action-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .project-action-arrow {
+    display: none;
+  }
+
+  .pet-techsus-page-hero {
+    min-height: auto;
+  }
+
+  .pet-techsus-visual {
+    min-height: 190px;
+    padding: 24px;
+  }
+
+  .pet-techsus-info-card,
+  .pet-techsus-flow div {
+    min-height: auto;
   }
 
   .support-card {

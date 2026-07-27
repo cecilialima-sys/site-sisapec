@@ -3,7 +3,7 @@ const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 
-const root = 'C:/Users/cecil/Downloads/projeto fisio';
+const root = __dirname;
 const port = 8123;
 const host = '127.0.0.1';
 const mime = {
