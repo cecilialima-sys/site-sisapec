@@ -1,4 +1,4 @@
-import { digitalSolutions, gatActivities, petCollaborators, petLastUpdated, petStats } from "./pet-techsus-data.js?v=2026072713";
+import { digitalSolutions, gatActivities, petCollaborators, petLastUpdated, petStats } from "./pet-techsus-data.js?v=2026090501";
 import {
   DigitalSolutionCard,
   EmptyState,
