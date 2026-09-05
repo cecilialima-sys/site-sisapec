@@ -378,7 +378,7 @@ export const petCollaborators = [
     name: "Cristina Garcia Lopes Alves",
     role: "Coordenadora Tutora do GAT 1",
     description: "Colaboração nas atividades institucionais do PET TechSUS.",
-    initials: "CA",
+    image: "../assets/images/cristina-garcia-lopes-alves.jpeg",
     lattes: "http://lattes.cnpq.br/2384731695226095"
   },
   {
