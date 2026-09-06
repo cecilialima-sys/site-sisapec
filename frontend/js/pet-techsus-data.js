@@ -20,14 +20,15 @@ export const petStats = [
     description: "Unidades de saúde alcançadas nas atividades formativas."
   },
   {
-    icon: "heart",
+    icon: "users",
     value: "50",
     title: "Usuários previstos",
     description: "Usuários do SUS previstos na pesquisa do GAT 5."
   },
   {
-    icon: "briefcase",
-    value: "aprox. 200",
+    icon: "users",
+    value: "200",
+    qualifier: "aproximadamente",
     title: "Profissionais envolvidos",
     description: "Profissionais envolvidos na coleta e preparação do GAT 6."
   },
@@ -45,13 +46,13 @@ export const gatActivities = [
     number: 1,
     title: "Letramento digital dos profissionais de saúde",
     shortTitle: "Letramento digital",
-    status: "Em andamento",
+    status: "Em execução",
     categories: ["Letramento digital", "Educação em saúde", "Pesquisa científica", "Capacitação profissional"],
     activityTypes: ["Pesquisa", "Capacitação", "Educação em saúde"],
     highlight: "Curso com plataforma criada",
-    summary: "Pesquisa sobre letramento digital e produção de materiais formativos para profissionais da rede publica municipal.",
+    summary: "Pesquisa sobre letramento digital e produção de materiais formativos para profissionais da rede pública municipal.",
     about: [
-      "Coleta de dados para pesquisa sobre letramento digital entre profissionais de saúde da rede publica municipal.",
+      "Coleta de dados para pesquisa sobre letramento digital entre profissionais de saúde da rede pública municipal.",
       "Produção de materiais para um curso direcionado ao desenvolvimento do letramento digital desse publico."
     ],
     advances: [
@@ -85,7 +86,7 @@ export const gatActivities = [
     number: 2,
     title: "Saúde Digital no SUS e aplicativo InfoVida",
     shortTitle: "InfoVida",
-    status: "Validação",
+    status: "Em validação",
     categories: ["Saúde digital", "Educação em saúde", "Combate a desinformação", "Desenvolvimento de aplicativos"],
     activityTypes: ["Capacitação", "Desenvolvimento tecnologico", "Validação"],
     highlight: "364 pessoas capacitadas",
@@ -100,7 +101,7 @@ export const gatActivities = [
       "136 participantes da comunidade externa.",
       "364 participantes no total.",
       "14 unidades de saúde atendidas.",
-      "Prototipo do aplicativo InfoVida em fase final de desenvolvimento."
+      "Protótipo do aplicativo InfoVida em fase final de desenvolvimento."
     ],
     nextSteps: [
       "Validar o aplicativo InfoVida.",
@@ -118,7 +119,7 @@ export const gatActivities = [
     ],
     technologies: ["Aplicativos móveis", "Educação em saúde", "Saúde digital"],
     timeline: [
-      { stage: "Desenvolvimento", description: "Prototipo do InfoVida em fase final de desenvolvimento." },
+      { stage: "Desenvolvimento", description: "Protótipo do InfoVida em fase final de desenvolvimento." },
       { stage: "Validação", description: "Validação prevista antes da disponibilização." },
       { stage: "Divulgação", description: "Disponibilização prevista entre agosto e setembro de 2026." }
     ],
@@ -136,7 +137,7 @@ export const gatActivities = [
     number: 3,
     title: "Avaliação de usabilidade do SisAPEC",
     shortTitle: "Usabilidade do SisAPEC",
-    status: "Avaliação em andamento",
+    status: "Em validação",
     categories: ["Usabilidade de sistemas", "Tecnologia em saúde", "Ciência da computação", "Interoperabilidade"],
     activityTypes: ["Pesquisa", "Usabilidade", "Interoperabilidade"],
     highlight: "Avaliação somativa e heurística",
@@ -178,7 +179,7 @@ export const gatActivities = [
     number: 4,
     title: "SisAPEC-Work e dispositivos vestíveis",
     shortTitle: "SisAPEC-Work",
-    status: "Pesquisa e prototipagem",
+    status: "Em execução",
     categories: ["Dispositivos vestíveis", "Interoperabilidade", "Reconhecimento de fala", "Saúde digital"],
     activityTypes: ["Pesquisa", "Prototipagem", "Interoperabilidade", "Desenvolvimento tecnologico"],
     highlight: "Samsung Galaxy Watch 7 em estudo",
@@ -212,7 +213,7 @@ export const gatActivities = [
     technologies: ["HL7 FHIR", "HAPI FHIR", "RNDS", "OpenEHR", "Reconhecimento de fala", "Dispositivos vestíveis"],
     timeline: [
       { stage: "Planejamento", description: "Arquitetura inicial de integração definida." },
-      { stage: "Desenvolvimento", description: "Prototipos de captura segura de áudio serão implementados." },
+      { stage: "Desenvolvimento", description: "Protótipos de captura segura de áudio serão implementados." },
       { stage: "Validação", description: "Testes de segurança, privacidade, LGPD e usabilidade serão necessários." },
       { stage: "Implementação", description: "Preparação de implementação piloto após validações." }
     ],
@@ -230,7 +231,7 @@ export const gatActivities = [
     number: 5,
     title: "Barreiras de acesso digital no SUS",
     shortTitle: "Barreiras digitais",
-    status: "Coleta de dados",
+    status: "Em execução",
     categories: ["Inclusão digital", "Acesso a saúde", "Pesquisa qualitativa", "Desigualdades sociais"],
     activityTypes: ["Pesquisa"],
     highlight: "50 usuários previstos",
@@ -269,8 +270,8 @@ export const gatActivities = [
     number: 6,
     title: "Inteligência artificial, farmacovigilância e segurança do paciente",
     shortTitle: "IA e farmacovigilância",
-    status: "Preparação",
-    categories: ["Inteligência artificial", "Seguranca do paciente", "Farmacovigilancia", "Educação", "Inovação"],
+    status: "Em preparação",
+    categories: ["Inteligência artificial", "Segurança do paciente", "Farmacovigilância", "Educação", "Inovação"],
     activityTypes: ["Pesquisa", "Capacitação", "Educação em saúde"],
     highlight: "aprox. 200 profissionais",
     summary: "Coleta com profissionais da Santa Casa de Alfenas e estruturação de curso sobre inteligência artificial na saúde.",
@@ -301,7 +302,7 @@ export const gatActivities = [
       { label: "Profissionais envolvidos", value: "aprox. 200" },
       { label: "Curso", value: "Agosto de 2026" }
     ],
-    technologies: ["Inteligência artificial", "Questionários", "Farmacovigilancia", "Modelos preditivos"],
+    technologies: ["Inteligência artificial", "Questionários", "Farmacovigilância", "Modelos preditivos"],
     timeline: [
       { stage: "Coleta", description: "Aplicação iniciada com aproximadamente 200 profissionais." },
       { stage: "Análise", description: "Consolidação e análise dos resultados após a coleta." },
@@ -315,13 +316,13 @@ export const gatActivities = [
     number: 7,
     title: "Interações medicamentosas e inteligência artificial",
     shortTitle: "Interações medicamentosas",
-    status: "Patente e análise",
-    categories: ["Interações medicamentosas", "Inteligência artificial", "Inovação", "Pesquisa científica", "Seguranca do paciente"],
+    status: "Em execução",
+    categories: ["Interações medicamentosas", "Inteligência artificial", "Inovação", "Pesquisa científica", "Segurança do paciente"],
     activityTypes: ["Pesquisa", "Desenvolvimento tecnologico"],
     highlight: "Aplicativo em patente",
     summary: "Desenvolvimento de aplicativo de interações medicamentosas, processo de patente, pesquisa e artigo científico.",
     about: [
-      "Reunioes presenciais e remotas para alinhamento das ações.",
+      "Reuniões presenciais e remotas para alinhamento das ações.",
       "Desenvolvimento de um aplicativo de interações medicamentosas.",
       "Processo de registro de patente do aplicativo.",
       "Pesquisa com profissionais hospitalares sobre a percepção do uso da inteligência artificial na prática clínica.",
@@ -473,7 +474,7 @@ export const digitalSolutions = [
     gatId: "gat-2",
     gatLabel: "GAT 2",
     objective: "Divulgar informações em saúde, prevenir fake news e apoiar monitoramento em saúde.",
-    stage: "Prototipo em fase final de desenvolvimento e validação.",
+    stage: "Protótipo em fase final de desenvolvimento e validação.",
     technologies: ["Aplicativo móvel", "Educação em saúde", "Saúde digital"]
   },
   {
@@ -490,6 +491,6 @@ export const digitalSolutions = [
     gatLabel: "GAT 7",
     objective: "Auxiliar profissionais na consulta e identificação de interações medicamentosas.",
     stage: "Processo de patente e análise de dados.",
-    technologies: ["Inteligência artificial", "Interações medicamentosas", "Seguranca do paciente"]
+    technologies: ["Inteligência artificial", "Interações medicamentosas", "Segurança do paciente"]
   }
 ];
