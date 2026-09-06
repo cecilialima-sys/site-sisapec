@@ -653,6 +653,7 @@
 }
 
 .frame-system img { object-position: center top; }
+.frame-senaden img { object-fit: contain; }
 .frame-pet-techsus-launch img { object-position: center 44%; }
 .frame-unifal-fair img { object-position: center 48%; }
 .frame-system-use img { object-position: center center; }
