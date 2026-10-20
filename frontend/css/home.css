@@ -799,3 +799,9 @@
 
 /* Fotos do SENADEn: preenchimento horizontal com foco no grupo */
 .frame-senaden img { object-fit: cover; object-position: center 35%; }
+
+/* Fotos SisAPEC no 20° SENADEn: recortes individuais */
+.carousel-item:has(img[src$="sisapec-senaden-20-1.jpeg"]) img { object-fit: cover; object-position: center 40%; }
+.carousel-item:has(img[src$="sisapec-senaden-20-2.jpeg"]) img { object-fit: cover; object-position: center 42%; }
+.carousel-item:has(img[src$="sisapec-senaden-20-3.jpeg"]) img { object-fit: cover; object-position: center 38%; }
+.carousel-item:has(img[src$="sisapec-senaden-20-4.jpeg"]) img { object-fit: cover; object-position: center 45%; }
