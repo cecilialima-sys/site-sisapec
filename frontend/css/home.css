@@ -790,3 +790,9 @@
 
 .carousel-item:has(img[src$="cbis-2026-brasilia-1.jpeg"]) img { object-fit: cover; object-position: center 25%; }
 .carousel-item:has(img[src$="cbis-2026-brasilia-3.png"]) img { content: url("../assets/images/cbis-2026-brasilia-3.jpeg"); }
+
+
+/* Fotos CBIS 2026: preenchimento horizontal com foco preservado */
+/* Fotos CBIS 2026: enquadramento horizontal */
+.carousel-item:has(img[src$="cbis-2026-brasilia-2.jpeg"]) img { object-fit: cover; object-position: center 32%; }
+.carousel-item:has(img[src$="cbis-2026-brasilia-3.png"]) img { content: url("../assets/images/cbis-2026-brasilia-3.jpeg"); object-fit: cover; object-position: center 32%; }
