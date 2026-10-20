@@ -786,3 +786,7 @@
 .content-section {
   background: rgba(255, 255, 255, 0.58);
 }
+
+
+.carousel-item:has(img[src$="cbis-2026-brasilia-1.jpeg"]) img { object-fit: cover; object-position: center 25%; }
+.carousel-item:has(img[src$="cbis-2026-brasilia-3.png"]) img { content: url("../assets/images/cbis-2026-brasilia-3.jpeg"); }
