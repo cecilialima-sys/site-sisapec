@@ -796,3 +796,6 @@
 /* Fotos CBIS 2026: enquadramento horizontal */
 .carousel-item:has(img[src$="cbis-2026-brasilia-2.jpeg"]) img { object-fit: cover; object-position: center 32%; }
 .carousel-item:has(img[src$="cbis-2026-brasilia-3.png"]) img { content: url("../assets/images/cbis-2026-brasilia-3.jpeg"); object-fit: cover; object-position: center 32%; }
+
+/* Fotos do SENADEn: preenchimento horizontal com foco no grupo */
+.frame-senaden img { object-fit: cover; object-position: center 35%; }
