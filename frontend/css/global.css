@@ -272,3 +272,76 @@ p {
 [data-include]:empty {
   min-height: 120px;
 }
+
+/* ==========================================================================
+   Ajuste visual (nov/2026): visual mais sóbrio, menos "cara de template".
+   Mantém paleta e composição; tira gradientes decorativos, brilhos,
+   sombras azuladas e animações de "flutuar". Para desfazer, apague este bloco.
+   ========================================================================== */
+
+:root {
+  --shadow-soft: 0 1px 2px rgba(18, 36, 58, 0.05), 0 6px 16px rgba(18, 36, 58, 0.05);
+  --shadow-card: 0 1px 2px rgba(18, 36, 58, 0.06);
+  --icon-tile-bg: #e6f3fb;
+}
+
+body {
+  background: #f8fcfd;
+}
+
+/* Rótulos acima dos títulos: sem tracinho, sem caixa-alta espaçada */
+.eyebrow {
+  gap: 0;
+  margin-bottom: 8px;
+  color: var(--color-primary-dark);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.eyebrow::before {
+  display: none;
+}
+
+/* Botões: cor sólida no lugar do gradiente, sem brilho nem "pulo" */
+.button {
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.button:hover,
+.button-primary:hover,
+.button-contact:hover {
+  transform: none;
+  filter: none;
+}
+
+.button-primary,
+.pet-page .button-primary {
+  padding: 0 24px;
+  border: 1px solid var(--color-primary-dark);
+  background: var(--color-primary-dark);
+  box-shadow: none;
+}
+
+.pet-page .button-primary > span {
+  padding: 0;
+  background: transparent;
+}
+
+.button-primary:hover,
+.pet-page .button-primary:hover {
+  background: #1b55aa;
+  box-shadow: none;
+}
+
+.button-contact {
+  background: var(--color-white);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.button-contact:hover {
+  border-color: var(--color-primary);
+  box-shadow: none;
+}

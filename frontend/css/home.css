@@ -483,6 +483,14 @@
   gap: 20px;
 }
 
+.works-section {
+  padding: 56px 0 0;
+}
+
+.works-section .works-action-card {
+  margin-inline: auto;
+}
+
 .works-action-card {
   display: flex;
   align-items: center;
@@ -536,6 +544,92 @@
   color: var(--color-muted);
   font-size: 15px;
   line-height: 1.45;
+}
+
+/* Seção SisAPEC Acadêmico (home) */
+.academic-section {
+  background: linear-gradient(180deg, rgba(241, 252, 254, 0.86), rgba(255, 255, 255, 0.74));
+}
+
+.academic-home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 42px;
+  align-items: center;
+}
+
+.academic-home-copy {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+}
+
+.academic-home-copy p {
+  max-width: 640px;
+}
+
+.academic-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.academic-home-visual {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 40px 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at center, rgba(43, 216, 195, 0.18), transparent 62%),
+    rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-ink);
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.academic-home-visual:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 50px rgba(28, 105, 144, 0.2);
+}
+
+.academic-home-icon {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background: var(--gradient-brand);
+}
+
+.academic-home-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.academic-home-visual strong {
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.academic-home-visual span:last-child {
+  color: var(--color-muted);
+  font-size: 16px;
+}
+
+@media (max-width: 980px) {
+  .academic-home-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pet-techsus-page-hero {
@@ -855,6 +949,76 @@
 /* Fotos CBIS 2026: enquadramento horizontal */
 .carousel-item:has(img[src$="cbis-2026-brasilia-2.jpeg"]) img { object-fit: cover; object-position: center 32%; }
 .carousel-item:has(img[src$="cbis-2026-brasilia-3.png"]) img { content: url("../assets/images/cbis-2026-brasilia-3.jpeg"); object-fit: cover; object-position: center 32%; }
+
+/* ==========================================================================
+   Ajuste visual (nov/2026) — home e páginas internas.
+   Fundos lisos, cards com borda discreta, ícones sem gradiente, sem "flutuar".
+   ========================================================================== */
+
+.hero-section {
+  background: linear-gradient(180deg, #ffffff, #f1fafd);
+}
+
+.origin-section,
+.developers-section,
+.academic-section,
+.pet-techsus-flow-section {
+  background: #f1f8fb;
+}
+
+.support-section {
+  background: var(--color-white);
+}
+
+.info-card {
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.info-icon {
+  color: var(--color-primary-dark);
+}
+
+.support-metric {
+  background: var(--color-white);
+  border-left: 3px solid var(--color-secondary);
+  box-shadow: none;
+}
+
+.origin-visual,
+.pet-techsus-visual,
+.academic-home-visual {
+  background: #f4fafc;
+}
+
+.works-action-card:hover,
+.project-action-card:hover,
+.academic-home-visual:hover {
+  transform: none;
+  box-shadow: var(--shadow-soft);
+  border-color: var(--color-primary);
+}
+
+.works-action-icon,
+.academic-home-icon,
+.pet-card-icon {
+  color: var(--color-primary-dark);
+  background: var(--icon-tile-bg);
+}
+
+.carousel-button {
+  box-shadow: 0 4px 12px rgba(7, 29, 43, 0.25);
+  backdrop-filter: none;
+}
+
+.carousel-button:hover {
+  color: var(--color-white);
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(7, 29, 43, 0.25);
+  transform: none;
+}
 
 /* Fotos do SENADEn: preenchimento horizontal com foco no grupo */
 .frame-senaden img { object-fit: cover; object-position: center 35%; }
