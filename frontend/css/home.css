@@ -491,6 +491,52 @@
   margin-inline: auto;
 }
 
+/* Banner "Veja os nossos trabalhos" (home) */
+.works-banner {
+  display: block;
+  padding: clamp(28px, 5vw, 52px);
+  border-radius: var(--radius);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.works-banner-copy {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.works-banner-label {
+  color: var(--color-secondary);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.works-banner h2 {
+  color: var(--color-white);
+  font-size: clamp(32px, 4.4vw, 52px);
+}
+
+.works-banner p {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(17px, 1.6vw, 19px);
+}
+
+.works-banner .works-banner-button {
+  margin-top: 6px;
+  border: 1px solid var(--color-white);
+  color: var(--color-primary-dark);
+  background: var(--color-white);
+}
+
+.works-banner .works-banner-button:hover {
+  color: var(--color-ink);
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+
 .works-action-card {
   display: flex;
   align-items: center;
