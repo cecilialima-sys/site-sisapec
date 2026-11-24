@@ -479,6 +479,65 @@
   padding: 8px 24px 24px;
 }
 
+.project-action-grid {
+  gap: 20px;
+}
+
+.works-action-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: min(100%, var(--container));
+  padding: 22px 26px;
+  border: 1px solid rgba(47, 151, 216, 0.24);
+  border-radius: var(--radius);
+  color: var(--color-ink);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.works-action-card:hover {
+  border-color: rgba(43, 216, 195, 0.56);
+  box-shadow: 0 18px 42px rgba(28, 105, 144, 0.16);
+  transform: translateY(-2px);
+}
+
+.works-action-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  color: var(--color-white);
+  background: var(--gradient-brand);
+}
+
+.works-action-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.works-action-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.works-action-copy strong {
+  color: var(--color-primary);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.works-action-copy small {
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
 .pet-techsus-page-hero {
   min-height: 520px;
   display: grid;
