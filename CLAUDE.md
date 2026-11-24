@@ -92,7 +92,7 @@ A pasta `backend/` é um placeholder. Não há rotas, banco de dados ou servidor
 | Destino | Onde |
 |---|---|
 | Plataforma SISAPEC | `https://app.sisapec.com/pt` (botão "Acessar sistema") |
-| Contato Gmail | `isabelle.costa@unifal-mg.edu.br` (link mailto composto) |
+| Contato (e-mail) | `mailto:isabelle.costa@unifal-mg.edu.br` com assunto preenchido (funciona com qualquer programa de e-mail) |
 | Instagram | `https://www.instagram.com/sisapec` |
 
 ---
