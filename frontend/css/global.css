@@ -289,6 +289,19 @@ body {
   background: #f8fcfd;
 }
 
+/* Títulos de seção alinhados à esquerda */
+.section-heading.center,
+.about-heading,
+.about-layout .section-copy {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section-heading.center p,
+.support-card .section-heading p {
+  margin-inline: 0;
+}
+
 /* Rótulos acima dos títulos: sem tracinho, sem caixa-alta espaçada */
 .eyebrow {
   gap: 0;

@@ -22,9 +22,6 @@
     grid-template-columns: 1fr;
   }
 
-  .info-card {
-    min-height: 340px;
-  }
 
   .carousel-track,
   .carousel-item img,
@@ -39,8 +36,8 @@
   }
 
   .hero-section {
-    min-height: 680px;
-    padding: 94px 0 70px;
+    min-height: 0;
+    padding: 94px 0 56px;
     align-items: start;
   }
 
@@ -53,7 +50,7 @@
 
   .hero-logo {
     width: min(470px, 92vw);
-    margin-top: 118px;
+    margin-top: 40px;
   }
 
   .hero-message {
@@ -79,6 +76,41 @@
     min-height: 46px;
     padding: 0 16px;
     font-size: 14px;
+  }
+
+  /* Topo no celular: "Acessar sistema" em destaque, os outros dois lado a lado e compactos */
+  .hero-top-action {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: min(100% - 24px, 360px);
+  }
+
+  .hero-top-action .button-primary {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-top-action .button-contact {
+    width: 100%;
+    max-width: none;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .hero-top-action .button-contact svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-top-action .label-full {
+    display: none;
+  }
+
+  .hero-top-action .label-short {
+    display: inline;
   }
 
   .section-heading.center {
