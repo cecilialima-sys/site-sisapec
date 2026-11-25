@@ -1113,6 +1113,10 @@
   transform: none;
 }
 
+/* Fotos Coren-RJ (II Reunião Internacional dos RTs) */
+.frame-coren-rj img { object-fit: cover; object-position: center 42%; }
+.frame-coren-rj-portrait img { object-fit: contain; object-position: center; }
+
 /* Fotos do SENADEn: preenchimento horizontal com foco no grupo */
 .frame-senaden img { object-fit: cover; object-position: center 35%; }
 
