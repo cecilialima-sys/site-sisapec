@@ -1113,6 +1113,137 @@
   transform: none;
 }
 
+/* Layout logo + texto (usado pela seção LIAS) */
+.gepec-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.gepec-logo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #000000;
+  box-shadow: var(--shadow-soft);
+}
+
+.gepec-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.gepec-copy {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.gepec-copy p {
+  max-width: 620px;
+}
+
+.gepec-copy .gepec-fullname {
+  color: var(--color-primary-dark);
+  font-size: clamp(18px, 1.8vw, 21px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.gepec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--color-primary-dark);
+  background: var(--icon-tile-bg);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.gepec-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+
+.gepec-actions {
+  margin-top: 4px;
+}
+
+@media (max-width: 980px) {
+  .gepec-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .gepec-logo {
+    width: min(100%, 360px);
+  }
+}
+
+/* Seção LIAS (home): mesmo formato do GEPEC-IA, espelhado */
+.lias-section {
+  background: var(--color-white);
+}
+
+.lias-layout {
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+}
+
+.lias-logo {
+  justify-self: center;
+  width: min(100%, 340px);
+  padding: 20px;
+  border-radius: 50%;
+  background: var(--color-white);
+}
+
+.lias-logo img {
+  border-radius: 50%;
+}
+
+.lias-event {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  max-width: 620px;
+  margin-top: 4px;
+  padding: 18px 22px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius);
+  background: var(--color-white);
+}
+
+.lias-event-label {
+  color: var(--color-primary-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.lias-event strong {
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+  .lias-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lias-logo {
+    order: -1;
+    justify-self: start;
+    width: min(100%, 260px);
+  }
+}
+
 /* Fotos Coren-RJ (II Reunião Internacional dos RTs) */
 .frame-coren-rj img { object-fit: cover; object-position: center 42%; }
 .frame-coren-rj-portrait img { object-fit: contain; object-position: center; }
